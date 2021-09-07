@@ -1,0 +1,699 @@
+// ANOTAÇÕES CURSO LINGUAGM C
+
+// AULA CRIANDO VARIAVEIS
+
+#include <stdio.h>
+
+int main ()
+{
+    int minhaIdade;
+    
+    minhaIdade = 23;
+
+    printf (" Minha idade = %i. \n", minhaIdade);
+
+    return 0;
+}
+
+// VARIAVEIS
+
+#include <stdio.h>
+
+int main ()
+{
+    int minhaIdade;
+    minhaIdade = 23;
+    int maeIdade = 48;
+    int paiIdade = 49;
+
+    printf (" Minha idade = %i. \nPai idade = %i\n Mae idade = %i\n", minhaIdade, paiIdade, maeIdade);
+
+    return 0;
+}
+
+// OPERAÇÕES MATEMATICAS
+
+#include <stdio.h>
+
+int main ()
+{
+    int minhaIdade = 23;
+    int maeIdade = 40;
+    int paiIdade = 45;
+    int irmaoIdade = 15;
+    
+    int idadeTotal;
+
+    idadeTotal = minhaIdade + maeIdade * paiIdade / irmaoIdade;
+
+    printf ("%i\n", idadeTotal);
+
+    return 0;
+}
+
+// FUNÇÃO SCANF
+
+#include <stdio.h>
+
+int main ()
+{
+    int base;
+    int altura;
+    int area;
+
+    printf ("Digite o valor da base: ");
+    scanf ("%i", &base);
+    
+    printf ("Digite o valor da altura: ");
+    scanf ("%i", &altura);
+
+    area = base * altura;
+
+    printf ("O valor da area do retangulo e' = %i", area);
+
+    return 0;
+}
+
+// VARIAVEIS TUPO FLOAT/CHAR
+
+#include <stdio.h>
+
+int main ()
+{
+    int inteira = 10;
+    float decimal = 10.555899;
+    char caractere = 'a';
+
+    printf ("%i\n", inteira);
+    printf ("%f\n", decimal);
+    printf ("%c\n", caractere);
+
+    return 0;
+}
+
+// VARIAVEL FLOAT
+
+#include <stdio.h>
+
+int main ()
+{
+    int num1 =5;
+    float num2 = 2;
+    float resultado = num1 / num2;
+
+    printf("%f\n", resultado);
+
+    return 0;
+}
+
+// AULA FOR
+
+#include <stdio.h>
+
+int main ()
+{
+    int contador;
+    int numero = 1;
+    
+    for (contador = 1; contador <=10; contador = contador +1) {
+        printf ("teste\n");
+        printf ("brasil\n");
+        
+    }
+
+    return 0;
+}
+
+// AULA WHILE
+
+#include <stdio.h>
+
+int main ()
+{
+    int contador = 1;
+    
+    while (contador <= 5) {
+
+        printf ("%i - ao infinito e alem\n", contador);
+        ++contador; 
+    }
+
+    return 0;
+}
+
+// AULA: EXERCICIO FOR - FATORIAL
+
+//Escreva um programa capaz de calcular o fatorial de um número. Exemplo: fatorial de 5 é 5 x 4 x 3 x 2 x 1 = 120
+
+#include <stdio.h>
+
+int main ()
+{
+    int fatorial = 15;
+    int resposta = 1;
+
+    for ( ; fatorial >=1; -- fatorial) {
+        resposta *= fatorial;
+    }
+
+    printf (" O numero fatorial e' %i\n", resposta);
+
+    return 0;
+
+}
+
+// AULA DO WHILE
+
+#include <stdio.h>
+
+int main ()
+{
+    int i = 0;
+
+    while  ( i != 0 ) {
+  
+        printf (" Teste \n");
+    }
+
+    do {
+        printf ("Teste 2\n");
+    } while ( i != 0);
+
+    return 0;
+}
+
+// AULA IF - IF ELSE
+
+#include <stdio.h>
+
+
+int main ()
+{
+    int idade ;
+
+    printf ("Favor informar idade:\n");
+    scanf ("%i", &idade);
+    
+    if (idade < 18)
+        printf ("Bebidas alcolicas nao estao liberadas\n");
+    else
+        printf ("Bebidas alcolicas estao liberadas\n");
+   
+    return 0;
+}
+
+// AULA IF, ELSE IF, ELSE
+
+#include <stdio.h>
+
+int main ()
+{
+    int idade ;
+
+    printf ("Informar idade\n");
+    scanf ("%i", &idade);
+
+    if (idade <= 5)
+        printf ("bebê\n");
+    else if (idade > 5 && idade <=10)
+        printf ("Criança\n");
+    else if (idade > 10 && idade <=18)
+        printf ("Adolescente\n");
+    else if (idade > 18 && idade <=50)
+        printf ("Adulto\n");
+    else 
+        printf ("Idoso\n");
+        
+    return 0;
+}
+
+// SWITCH
+
+#include <stdio.h>
+
+int main ()
+{
+    int i;
+
+    printf ("Insira um numero inteiro de 1 a 5\n");
+    scanf ("%i", &i);
+
+    switch (i)
+    {
+    case 1:
+        printf ("Primeiro\n");
+        break;
+     case 2:
+        printf ("Segundo\n");
+        break;
+         case 3:
+        printf ("Terceiro\n");
+        break; 
+        case 4:
+        printf ("Quarto\n");
+        break;
+        case 5:
+        printf ("Quinto\n");
+        break;
+    default:
+        printf ("Opcao nao valida\n");
+        break;
+    }
+
+    return 0;
+}
+
+
+// LISTA DE EXCERCICIOS
+
+//Escreva um programa que peça que o usuário digite dois números INTEIROS. O seu programa deve verificar se o primeiro número é divisível pelo segundo e retornar na tela do usuário uma mensagem apropriada a verificação feita.
+
+#include <stdio.h>
+
+int main ()
+{
+    int num1, num2;
+
+    printf ("Digite 2 numeros inteiros:\n");
+    scanf("%i %i", &num1, &num2);
+
+    if (num2 == 0)
+        printf ("Divisao por 0 nao permitido.\n");
+    else {
+        if (num1 % num2 == 0)
+            printf ("%i e dividilvel por %i.\n", num1, num2);
+        else
+            printf ("%i nao e dividilvel por %i.\n", num1, num2);
+        
+    }
+
+    return 0;
+}
+
+// Exercicios
+
+// Escreva um programa que inverta as cifras de um número INTEIRO POSITIVO digitado pelo usuário. Exemplo: Se o usuário digitar 1234 o programa deve retornar na tela 4321.
+
+#include <stdio.h>
+
+int main ()
+{
+    int numero, cifra;
+
+    printf ("Digite um numero inteiro:\n");
+    scanf("%i", &numero);
+
+    if (numero >=0) {
+        do {
+            cifra = numero % 10;
+            printf("%i", cifra);
+            numero /= 10;
+        
+        } while (numero != 0);
+        printf ("\n");
+        
+    }
+    else if (numero < 1) {
+        numero = numero * -1;
+
+        printf ("-");
+
+    do {
+        cifra= numero % 10;
+        printf ("%i", cifra);
+        numero /= 10;
+    } while (numero != 0);
+
+    printf ("\n");
+
+    }
+        
+    return 0;
+    }
+
+    // AULA OPERADOR CONDICIONAL ?
+
+#include <stdio.h>
+
+int main ()
+{
+    int num1 = 100;
+    int num2 = 20;
+
+    int resposta;
+
+    num1 < num2 ? printf ("sim\n") : printf ("nao\n");
+
+    // num1 < num2 ? resposta = 10 : resposta = -10;   // MODELO PROFESSOR
+
+    resposta = num1 < num2 ? 10 : -10;  // RESPOSTA EGON QUE FUNCIONOU
+
+    printf ("%i\n", resposta);
+
+    return 0;
+}
+
+// AULA REVISAO TIPOS DE VARIAVEIS
+
+#include <stdio.h>
+
+int main ()
+{
+    char variavelChar = 'a';
+    printf ("%c\n", variavelChar);
+
+    bool variavelBooleano = 1 /*True*/ 0 /*False*/;
+    printf ("%i\n", variavelBooleano);
+
+    int variavelInt = 10;
+    printf ("%i\n", variavelInt);
+
+    const int variavelConstInt = 10; // Constant - Valor nao pode ser altereado futuramente
+    printf ("%i\n", variavelConstInt );
+
+    float variavelFloat = 10.10; // Qdo tem , - Valores Fracionados
+    printf ("%f\n", variavelFloat);
+
+    double variavelDouble = 10.10; //Precisao depois da virgula é maior.
+    printf ("%f\n", variavelDouble);
+    scanf ("%lf\n", variavelDouble);
+
+    return 0;
+}
+
+// AULA CICLOS CONTENDO OUTROS CICLOS
+
+#include <stdio.h>
+
+int main (void)
+{
+    for ( int i = 1; i <= 10; i++)
+    {
+        printf (" *** Volta %i\n", i);
+        for (int j = 1; j < 10; j++) {
+        printf (" *** Volta %i\n", j);
+        }
+        printf ("\n");
+    }
+    return 0;
+}
+
+// AULA INTRODUÇÃO VETORES
+
+#include <stdio.h>
+
+int main (void)
+{
+   
+    int nota[5] ; // Pode ser qqr tipo de variaveis. | Ou seja a variavel se torna habilitada para receber mais de um campo/registro.
+
+// Para atribuir valor a cada coluna* da variavel:
+
+    nota[0] = 10; //(Atribui valor de 10 ao campo 0 do vetor).
+    nota[1] = 55;
+    nota[2] = 66;
+    nota[3] = 77;
+    nota[4] = 4;
+
+    printf("%i\n", nota[5]);
+
+    return 0;
+}
+
+// AULA DECLARAR VETORES
+// Como visualizar os valores dentro do vetor inteiro, de uma só vez.
+
+#include <stdio.h>
+
+int main (void)
+{
+    int vetor[5]; 
+
+    for (int i =0; i<5; ++i){
+        printf("%i\n", vetor[i]);
+    }
+
+    return 0;
+}
+
+// AULA MANIPULANDO VETORES
+// Pedir pro usuario colocar as notas. Ele calcula as medias e devolver resultado ao usuario.
+
+#include <stdio.h>
+
+int main (void)
+{
+    float notas [5] = {0};
+    float total = 0;
+    float media = 0;
+
+    printf ("Insira 5 notas:\n");
+    
+    for (int i =0; i<5; ++i)
+        scanf("%f", &notas [i]);
+
+    for (int i=0; i<5; ++i)
+        total += notas [i];
+
+    media = total / 5;
+
+    printf (" A media do aluno e %f", media);
+
+
+    return 0;
+}
+
+// AULA INTRODUÇÃO MATRIZES
+// Matriz possui linhas e colunas, enquanto no vetor so possui linhas
+
+#include <stdio.h>
+
+int main (void)
+{
+    int matriz [3] [3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    printf ("%i", matriz [0] [10]);
+
+    
+    return 0;
+}
+
+/* Outa opção:
+
+int main (void)  
+{
+    int matriz [5] [5] = {{ 1,  2,  3,  4,  5},  // as linhas sao linhas e as colunas as colunas do registro.
+                          { 6,  7,  8,  9, 10},
+                          {11, 12, 13, 14, 15},
+                          {16, 17, 18, 19, 20},
+                          {11, 12, 13, 14, 15},
+
+    printf ("%i", matriz [0] [10]);
+
+    
+    return 0;
+}
+*/
+
+// AULA MANIPULANDO MATRIZES
+// Ler dados de uma Matriz (ciclo for que dara printf para cada membro da Matriz)
+
+#include <stdio.h>
+
+int main (void)   // Matriz Bidimensional
+{
+    int matriz [5] [5] = {{ 1,  2,  3,  4,  5},  
+                          { 6,  7,  8,  9, 10},
+                          {11, 12, 13, 14, 15},
+                          {16, 17, 18, 19, 20},
+                          {21, 22, 23, 24, 25}};
+
+
+    for (int m=0; m<5; ++m) {
+        for (int n=0; n<5; ++n) {
+            printf ("%i ", matriz [m] [n]);
+        }
+    printf ("\n");
+}
+return 0;
+}
+
+
+// AULA REVISAO VETORES E MATRIZES
+/* Exercicio : 
+Cire um programa que pede que o usuario digite 4 notas de 0 a 10 (tipo float) de 4 alunos.
+Os valores deverão ser armazenados em uma matriz bidimensional.
+Faça a média das notas de cada aluno e armazene as 4 médias em um vetor.
+Coloque na tela do usuario uma mensagem informando a media de cada aluno.
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+
+    const int bimestresAnuais = 4;
+    const int numeroDeAlunos = 4;
+    
+    float notasAlunos[4][4]={0};
+    float mediasAlunos[4]={0};
+
+    float media = 0;
+
+    printf ("Insira as 4 notas do aluno 1:\n");
+     
+    for (int aluno =0; aluno< numeroDeAlunos; ++aluno) {
+        for (int notas = 0; notas<bimestresAnuais; ++notas) {
+            scanf ("%f", &notasAlunos[aluno][notas]);
+            media += notasAlunos[aluno][notas];
+        }
+        mediasAlunos[aluno] = media/bimestresAnuais;
+        media = 0;
+        printf("Insira as 4 notas do aluno %i:\n", aluno +2);
+}
+
+for (int aluno =0; aluno< numeroDeAlunos; ++aluno) {
+    printf("A media do aluno %i eh %.2f\n", aluno +1, mediasAlunos[aluno]);
+}
+return 0;
+}
+
+// AULA 28 - INTRODUÇÃO FUNÇÕES
+/* Uma função é um conjunto de comandos agrupados por um nome, este nome é uma função.
+Após a execução, o programa volta ao ponto do programa após a chamada. Essa volta é chamada de retorno.
+*/
+
+#include <stdio.h>
+
+int main () {
+
+    void imprimaMensagem (void); // Declarar a função
+    imprimaMensagem ();     // o que deve fazer / codigo
+
+    return 0;
+}
+
+void imprimaMensagem (void) {
+
+    printf("teste.");
+}
+
+// AULA 29 - COMO USAR FUNÇÕES
+
+#include <stdio.h>
+
+int main (void) {
+
+    float calculAreaRetangulo(float x, float y);    // Chamar a função
+
+    float area = calculAreaRetangulo(10.0, 20.0);   // Atribuir valor (argumentos) a variavel
+
+    printf(" A area eh: %f", area);                 // o que deve fazer / codigo 
+
+    return 0;
+}
+
+float calculAreaRetangulo(float base, float altura) {   // Declarar a função -> Fora do Main = Vantagem: Pode ser chamada varias vezes dentro do codigo.
+
+    float area = base * altura;
+
+    return area;
+
+}
+
+// AULA 30 - FUNÇÃO E VARIAVEL LOCAL AUTOMATICA
+/* é local pq é visivel apenas na funcao teste. Qdo cria uma variavel dentro de uma funcao ela é visivel apenas na funcao e nao a outras funçoes.
+Automatica pq cada vez que chamamos a função ela é recriada, ela perde o valor anterior.
+
+*/
+#include <stdio.h>
+
+int main (void) {
+
+    void teste (void);    // Chamar a função
+
+    teste();
+    teste();
+    teste();
+
+    return 0;
+}
+
+void teste(void) {   // Declarar a função -> Fora do Main = Vantagem: Pode ser chamada varias vezes dentro do codigo.
+
+   int variavelLocalAutomatica = 2;
+   variavelLocalAutomatica *= 2;
+
+   printf ("Local Automatica = %i\n", variavelLocalAutomatica);
+
+}
+
+
+// AULA 31 - FUNÇÃO E VARIAVEL LOCAL Estatica
+/* é local pq é visivel apenas na funcao teste. Qdo cria uma variavel dentro de uma funcao ela é visivel apenas na funcao e nao a outras funçoes. No caso deste exemplo a funcao teste esta declarada fora do main, portando ela chama a função que esta fora, mas se colocar o printf dentro do main vai dar erro pq a variavel foi criada fora do main.
+Estatica pq ela nao perde o valor dela a cada vez que a função é chamada. Ou seja, ela nao é recriada, ela é estatica no programa. Se a funcao rodar mais de uma vez ela estabelece o resultado anterior como inicial da segunda vez, e assim por diante.
+
+*/
+#include <stdio.h>
+
+int main (void) {
+
+    void teste (void);    // Chamar a função
+
+    teste();
+    teste();
+    teste();
+
+    return 0;
+}
+
+void teste(void) {   // Declarar a função -> Fora do Main = Vantagem: Pode ser chamada varias vezes dentro do codigo.
+
+   int variavelLocalAutomatica = 2;
+   variavelLocalAutomatica *= 2;
+
+   static int variavelLocalEstatica = 2;    // static faz a variavel se tornar estatica.
+   variavelLocalEstatica *= 2;
+
+   printf ("Local Automatica = %i\n", variavelLocalAutomatica);
+   printf ("Local Estatica = %i\n", variavelLocalEstatica);
+
+}
+
+// AULA 32 - FUNÇÃO E VARIAVEL GLOBAL
+
+/* é global pq pode ser chamada em qqr momento do codigo. É declarada antes do main. Pode ser chamada dentro do main ou mesmo em outra funcao fora do main.
+
+*/
+
+#include  <stdio.h>
+
+int gVariavelGlobal =2;  // Colocar g na frente do nome da Variavel Global para facilitar a leitura
+
+int main (void) {
+
+    void teste (void);
+
+    printf ("Global = %i\n", gVariavelGlobal);
+    teste();
+    teste();
+
+    return 0;
+}
+
+void teste(void) {  
+
+   int variavelLocalAutomatica = 2;
+   variavelLocalAutomatica *= 2;
+
+   static int variavelLocalEstatica = 2;
+   variavelLocalEstatica *= 2;
+
+   gVariavelGlobal *= 2;
+
+   printf ("Local Automatica = %i\n", variavelLocalAutomatica);
+   printf ("Local Estatica = %i\n", variavelLocalEstatica);
+   printf ("Global = %i\n", gVariavelGlobal);
+
+}
+
