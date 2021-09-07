@@ -1,0 +1,533 @@
+
+// ********* CONDICIONAIS *********//
+// ********* IF  | ELSE | IF ELSE | ELSE IF *********//
+// ********* ESCOPO > GLOBAL | LOCAL | BLOCO *********//
+// ********* SWITCH *********//
+// ********* LOOPS > FOR | WHILE | DO WHILE *********//
+
+
+
+// *************** CONDICIONAIS ***********************//
+
+
+// *********  IF  +  IF ELSE **********//
+
+/* IF: 
+O if(se) é um comando que permite executar um código apenas se uma condição entre parênteses for verdadeira (true) 
+Exemplo Pratico :
+*/
+
+let x= 1;
+if (x == 1){
+}
+
+let disponivel = true;
+let quantidade = 5;
+
+if (quantidade > 0 && disponivel){
+    console.log ("produto disponivel para venda <br/>");
+}
+
+if (quantidade > 0 && disponivel){
+    document.write  ("produto disponivel para venda <br/>");
+}
+
+/* ELSE: 
+O comando ELSE (senão) serve para executarmos um trecho de código quando o IF for falso. 
+Exemplo Pratico :
+*/
+
+let nome = "Joao"
+if(nome == "Maria"){
+    console.log ("Acesso permitido")
+}else {
+    console.log ("Acesso Negado!")
+}
+
+if(nome == "Maria"){
+    document.write ("Acesso permitido <br/>")
+}else {
+    document.write ("Acesso Negado!<br/>")
+}
+
+/* IF ELSE IF ELSE ...: 
+Caso você possua muitas condições, pode ficar um pouco difícil de ler o código 
+Exemplo Pratico :
+*/
+
+let cidade = "Porto Alegre"
+
+if (cidade == "Porto Alegre ") {
+    // codigo
+}else{
+    if(cidade == "São Paulo") {
+        // codigo
+    }
+    else { 
+        if (cidade == "Rio de Janeiro") {
+            // codigo
+        }
+    }
+}
+
+/* ELSE IF: 
+Em casos como o anterior, é interessante usar o comando ELSE IF (senão se)
+Exemplo Pratico :
+*/
+
+if (cidade == "Porto Alegre ") {
+    // codigo
+}else if (cidade == "São Paulo") {
+    // codigo
+}else if (cidade == "Rio de Janeiro") {
+    // codigo
+}else{
+    // codigo
+}
+
+/* ESCOPO - 
+O bloco de escopo é definido pela região ao qual variáveis e outros dados são visíveis.
+Exemplo Pratico :
+*/
+
+let numero = 1;
+
+if (numero ==1){
+    let texto = "olá";
+    // acessando a variavel numero
+    numero = 2;
+}
+
+/* erro de escopo Exemplo:
+ console.log (texto);
+ -- Nao aparecerá pois a variavel foi craida dentro do if (outro escopo)
+*/ 
+
+
+/* Escopo global: 
+Uma variável declarada fora de uma função, torna-se global e todos os scripts e funções em uma página da Web podem acessá-la.
+Exemplo Pratico:
+*/
+
+let valor = 12;
+
+let umaFuncao = function (){
+    console.log (valor);
+}
+
+if (numero == 12){
+    umaFuncao ();
+    console.log (valor);
+}
+
+let umaFuncao1 = function (){
+    document.write (valor);
+}
+
+if (numero == 12){
+    umaFuncao1 ();
+    document.write (valor);
+}
+
+/* Escopo de bloco:
+Variáveis declaradas dentro de um local cercado por {}.
+Estas variáveis não podem ser acessadas fora de seu escopo.
+Exemplo Pratico:
+*/
+
+let varGlobal = 1;
+function funcaoGlobal () {
+    let varFuncao = varGlobal + 1;
+
+    function funcaoLocal () {
+        let varFuncLocal = varFuncao + varGlobal;
+        console.log (varFuncLocal);
+}
+}
+
+
+let funcaoGlobal2 = function  () {
+    let varFuncao = varGlobal + 1;
+
+    function funcaoLocal () {
+        let varFuncLocal = varFuncao + varGlobal;
+        document.write (varFuncLocal);
+    }
+}
+
+/* SWITCH: 
+O switch serve para executar um código de acordo com diversos possíveis resultados.
+   # O switch é a alternativa perfeita ao if/else caso existam muitas comparações de um valor.
+   # CASE: Como você pode ver pelo exemplo, para cada possibilidade, é necessário termos um “case”.
+   # BREAK: O comando “break” serve para encerrar a leitura do switch. Sem ele código do case abaixo será executado.
+   # DEFAULT: O default é nosso “else” e executará quando nenhum case corresponder ao valor.  
+   # Comparação: O switch compara usando o ===, então tanto o valor quanto o tipo do dado precisam ser iguais.
+
+Exemplo Pratico:
+*/
+
+let codigo = 1;
+switch (codigo) {
+    case 50:
+        console.log ("banana")
+        break;
+    case 9540:
+            console.log ("limão <br/>");
+            break;
+       default:
+            console.log ("desconhecido <br/>");
+        break;
+}
+
+
+//___________________________________________//
+
+// Exemplo Egon switch//
+
+let fruta="abacate <br/>";
+document.write (fruta);
+
+let x1 = 1;
+if (x1==1) {
+    var y = 99;
+}
+
+document.write (y);
+
+let codigo2=50;
+
+switch (codigo) {
+    case 50:
+        console.log ("banana <br/>");
+        break;
+    case 9540:
+        console.log ("limão <br/>");
+        break;
+    default:
+        console.log ("desconhecido <br/>");
+    break;
+}
+
+switch (codigo) {
+    case 50:
+        document.write ("banana <br/>");
+        break;
+    case 9540:
+        document.write ("limão <br/>");
+        break;
+    default:
+        document.write ("desconhecido<br/>");
+    break;
+}
+
+document.write (codigo);
+document.write (codigo2);
+
+
+// Exercicio de Revisão condicionais de escopo //
+
+let simbolo1 = "R$";
+let simbolo2 = "$";
+let simbolo3 = "£";
+
+function moeda2 (simbolo) {
+    switch (simbolo) {
+        case "R$":
+            console.log ("Real");
+            break;
+        case "$":
+            console.log ("Dolar");
+            break;
+        case "£":
+            console.log ("Libra");
+            break;
+        default:
+            console.log ("Não encontrado");
+            break;    
+        }
+}
+
+function moeda (simbolo) {
+    switch (simbolo) {
+        case "R$":
+            document.write ("<br/> Real <br/>");
+            break;
+        case "$":
+            document.write ("Dolar <br/>");
+            break;
+        case "£":
+            document.write ("Libra <br/>");
+            break;
+        default:
+            document.write ("Não encontrado");
+            break;    
+        }
+}
+
+// Mesmo exercicio com IF -  IF ELSE 
+
+function moeda3 (simbolo){
+    if (simbolo == "R$"){
+        console.log("Real");
+
+    } else if (simbolo == "$"){
+        console.log ("Dolar");
+
+    } else if (imbolo == "£"){
+        console.log("Libra");
+
+    } else {
+        console.log("Não encontrado");
+        }
+}
+
+moeda (simbolo1);
+moeda (simbolo2);
+moeda (simbolo3);
+
+
+// --------------NOVO EXERCICIO --------//
+
+let objetoServidor = {
+    acesso: true,
+    login: "mundojs",
+};
+
+let objetoServidor2 = {
+    erro: "erro ao conectar ao servidor",
+};
+
+function conexaoLogin (respostaDoServidor) {
+    if (respostaDoServidor.erro == null){
+        if(respostaDoServidor.acesso){
+            console.log (`login: ${respostaDoServidor.login}`);
+        }else {
+            console.log("acesso negado");
+        }
+    }else{
+        console.log (respostaDoServidor.erro);
+    }
+}
+
+
+// *************** LOOPS ***********************//
+
+/* FOR: 
+O “for” é um comando que executa X vezes uma ação seguindo a forma como foi definido para ele fazê la.
+INSTRUÇÃO: a instrução de execução do for é dividida em 3 partes separadas por ponto e vírgula.
+
+1ª) Instrução ocorrerá quando o for iniciar. Normalmente é a criação de uma variável de controle.
+2ª) A condição para encerrar o for.
+Neste caso, ele executará enquanto i for menor que 10.
+
+Importante: caso essa condição nunca se torne “false”, teremos um loop infinito.
+
+3ª) Instrução que ocorrerá no final de cada repetição. Normalmente é um incremento de 1 da variável.
+Exemplo Pratico:
+*/ 
+
+for (let i=0; i< 10; i++) {
+    console.log (i);
+}
+
+
+/* Utilidade: 
+Além de executar uma mesma instrução várias vezes. Ele é perfeito para ler vetores ou modificar todos os itens de um vetor. 
+# OBSERVAÇÃO: Note que os passos padrões são opcionais. Mas caso você queira executar de outra forma, existem loops melhores para isso.
+
+BOAS PRÁTICAS:
+# Apesar da tentação de fazer um código usando formatação mais complexa, evite fugir dos padrões de programação.
+# Lembre que na maioria das vezes você estará trabalhando com uma equipe que precisa entender sua parte do programa.
+# Também, vai acontecer de você ficar semanas ou meses sem mexer em seu programa e é necessário que seja fácil retomar seu trabalho quando necessário.
+
+Exemplo Pratico:
+*/
+
+let lista= ["cachorro", "gato", "galinha"];
+
+for (let i=0; i< lista.length; i++) {
+    console.log (lista [i]);
+}
+
+ //ou modificar todos os itens de um vetor EXEMPLO:
+
+ let valores = [1,2,3,4,5];
+
+for (let i=0; i< valores.length; i++) {
+    valores[1] = valores[i]* 2;
+    console.log (valores [i]);
+}
+
+//# OBSERVAÇÃO: Note que os passos padrões são opcionais. Mas caso você queira executar de outra forma, existem loops melhores para isso. EXEMPLOS:
+
+let i=5;
+for (;i<10; i++) {
+    console.log (i);
+}
+
+let i2=3;
+for (;i2<10;) {
+    console.log (i2);
+    i2=i2+2;
+}
+
+let i3=3;
+let x2=0;
+for (; ;) {
+    console.log (i3);
+    i3=i3+2;
+    x2=i3/2;
+    if(x2 > 20){
+        break;
+    }
+}
+
+
+/* FOR OF: 
+Este loop é específico para iterar entre os elementos de uma lista.
+Você pode ler ele como “Para cada item de uma lista”. 
+No exemplo abaixo, dia começará sendo com o valor “segunda” e o último loop será “sexta”.
+Exemplo Pratico:
+*/ 
+
+let dias = ["segunda", "terça", "quarta", "quinta", "sexta"];
+
+for (let dia of dias) {
+    console.log (dia);
+}
+
+/*
+Como você já deve ter notado, percorrer a lista em ordem crescente é o coração do for of.
+Caso você precise trabalhar com índices ou múltiplas posições da lista, talvez seja melhor usar o for normal.
+Exemplo Pratico:
+*/ 
+for (let numero of [0,1,2,3,4,5,6,7]) {
+    console.log (numero);
+}
+
+/* WHILE:
+Este loop funciona de forma bem simples. Enquanto ( while ) a condição for true , executa o código. 
+Lembre que você precisa fornecer uma forma para que o loop termine, caso contrário terá um loop infinito.
+Exemplo Pratico:
+*/ 
+
+let num =1;
+
+while (num<10){
+    console.log ("valor:" + num);
+    num= num + 2;
+}
+
+/* DO WHILE: 
+Similar ao while , o do while executa um trecho de código e depois testa se o executará novamente. 
+DO WHILE: Ambos “ while ” e “do while ” tem uma lógica similar. A situação que definirá qual o melhor loop para seu código.
+Exemplo Pratico:
+*/ 
+
+let num1 =1;
+
+do{
+    console.log(num1);
+    num1++;
+}
+while (num1<10);
+
+
+let num3=1;
+
+while (num3<10){
+    console.log (num3);
+    num3 ++;
+}
+
+
+/* # Break: 
+O break é um comando que podemos utilizar quando queremos parar/encerrar o loop na hora.
+Exemplo Pratico:
+*/ 
+
+let num4 =1;
+
+while (num4 < 10){
+    console.log (num4);
+    if (num4 == 6){
+        break;
+    };
+    num4++;
+}
+
+for( let numero of [1,2,3,4,5,6,7]){
+    console.log (numero);
+    if(numero == 5){
+        break;
+    }
+}
+
+
+/*Continue: 
+Com este comando, é possível iniciar a próxima repetição do loop.
+Exemplo Pratico:
+*/   
+
+for( let numero of [1,2,3,4,5,6,7]){
+    if(numero == 5 || numero == 7){
+        continue;
+    }
+    console.log (numero);
+}
+
+// Exemplo pratico - Revisão
+
+let alunos = [
+    {
+        nome: "Maria",
+        nota: 8
+    },
+    {
+        nome: "Pedro",
+        nota: 4
+    },
+    {
+        nome: "João",
+        nota: 10
+    },
+    {
+        nome: "Paulo",
+        nota: 9
+    },
+    {
+        nome: "Ana",
+        nota: 7
+    },
+    {
+        nome: "Bianca",
+        nota: 6
+    },
+]
+
+// escreva um loop que percorre o vetor acima e informa se o aluno passou
+// condicao para passar: nota maior que 7.
+
+console.log("FOR");
+for (let i= 0; i < alunos.length; i++){
+    if (alunos [i].nota>7) {
+        console.log(`${alunos[i].nome} : passou`);
+    }
+}
+
+
+console.log("FOR OF");
+for (let aluno of alunos) {
+    if (aluno.nota > 7) {
+        console.log(`${aluno.nome} : passou`);
+    }
+}
+
+console.log("FOR OF");
+for (let aluno of alunos) {
+    if (aluno.nota < 7) {
+        console.log(`${aluno.nome} : Naopassou`);
+    }
+}
+
+
