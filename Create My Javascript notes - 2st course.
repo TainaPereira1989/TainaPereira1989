@@ -1,0 +1,695 @@
+/* ANOTAÇÕES TAINÁ JS */ 
+
+/* VS CODE LIVE SERVER> CTRL + SHIFT + P = STOP/START
+MENU INICIAL > AUTO SAVE
+
+*/ 
+//Capitulo 2:
+
+//Elementos Basicos do JS
+
+//Boas Praticas ao usar JS:
+
+// Regra 1: JS é sensivel a Minuscula e Maiuscula
+
+// Regra 2: camelCase: Concatenamos (juntamos/exprememos) as palavras e separamos elas ao capitalizar (colocar em maiusculo) a p+rimeira letra de cada palavra.
+
+getElementByTagName
+
+// Variaveis, Funçoes e nomes de metodos = Começar com letras minusculas.
+
+ var greenDuck;
+ 
+// Classes e Objetos = Começa com letras Maiuculas;
+
+ var date = Date ();
+
+// Constantes sao todas em letras maiusculas
+
+ const = CONSTANTLYUPPERCASE;
+
+// Regra 3: Espaçoes em Branco: Para o JS nao faz diferença deixar ou nao, mas para o codigo ser lido por colegas no futuro, é importante deixar espaços em branco.
+
+// Regra 4: Termine cada afirmação com ;
+
+// Regra 5: Usar comentarios empre que necessario, para deixar notas sobre meu codigo. Para facilitar entendimento futuro.
+
+// ______________________________________
+
+// Capitulo 3:
+
+// Manipulação de dados.
+
+// Como usar Variaveis:
+
+// Declarar variavel: var (+nome);
+//o nome da variavel pode ser qqr coisa que contenha letras, cifras, underline, numero, ou mesmo uma unica letra.
+
+// Tipos de dados:
+
+// Numerico: Lida com numeros
+var number = 5.66;
+
+// String: Lida com cadeias de letras e simbolos: (se colocar as /assim/  o que estiver dentro da aspas internas nao aparecerá no navegador)
+var = "Linhas geralmente sao palavras e sentenças"
+var escQuote= " Citações tbn podem ser /"assim/".";
+
+//Booleano: lida com binario, verdadeiro ou falso:
+var theSunIsWarm = true;
+var theMoonIsMadeOfCheese = true;
+
+// Nulo: Objeto que deixamos sem valor intencionalmente, qdo queremos que o valor seja nulo mas nao indefinido.
+var emptyInside = null;
+
+// Indefinido: Para criar variavel mas nao quer atribuir valor a ela.
+var justAnotherVariable;
+
+// Symbol (nao sera visto neste curso)
+
+//________________________________________________
+
+// Operador Unario: Ele executa a soma ou subtração de 1 a variavel, porem, depois de fazer a declaração, ele altera o valor da variavel pelo resultado da soma/subtração:
+
+a= 5
+a++;  =  5+1
+a--;  =  5+1
+++a;  =  1+5 // valor da variavel agora passa a ser 6
+
+// Operador e Numero String: Ele combina (concatena) os numeros. Isso ocorre para soma, subtração, divisao e multiplicação.
+var a = 5;
+var b = "4";
+var sum = a+b; // o resultado sera 54.
+
+var a = 5;
+var b = "J"; // String de letras
+var sum = a+b; //  o resultado sera = NaN.= Not a Number.
+
+// CONDIÇÇOES UTILIZANDO OPERADORES LOGICOS:
+
+// Condicional IF:
+if ( /*alguma condição */){
+    //Faça alguma coisa (bloco de codigo)
+}
+
+// Else:
+if ( /*alguma condição */){
+    //Faça alguma coisa (bloco de codigo) - Qdo a condição é verdadeira.
+} else {
+    // Faça Outra coisa - Qdo a condição é falsa.
+}
+
+// IGUALDADE "=="
+
+// Se "a" é igual (contem o mesmo valor que) "b":
+if ( a == b){
+    //Faça alguma coisa.
+} else {
+    // Faça Outra coisa.
+}
+
+//IGUALDADE ESTRITA " === ": Para fazer comparação e obter resultado absolutamente igual, ou seja, se compararmos o var numero x var string, mesmo ambas sendo por ex 5, o resultado sera false.
+
+// Menor que "<"
+// Maior que ">"
+// Menor ou igual a "<="
+// Maior ou igual a ">="
+// Negação "!" (bang): Condição na qual um valor nao é igual a outro.
+// Se "a" não é igual (contem o mesmo valor que) "b":
+if ( a != b){
+    //Faça alguma coisa.
+} else {
+    // Faça Outra coisa.
+}
+
+// Booleanos: Para testar se é verdadeiro:
+If (a== true) {}    // Versao longa
+If (a) {}    // Versao ABREVIADA
+
+// Booleanos: Para testar se é falso:
+If (a== false) {}    // Versao longa
+If (a != true) {}    // Pscologia reversa
+If (!a) {}    // Versao ABREVIADA: Literalmente "NAO É A"
+
+// CONDIÇÕES AVANÇADAS:   AND . OR . XOR
+
+// AND: "&&": Se "a" é igual a "b" e (AND) "c" é igual a "d":
+if (a == b && c==d) {}
+
+// OR:"||" (PYPES ): Se "a" é igual a "b" ou (OR) "c" é igual a "d":
+if (a == b || c==d) {}
+
+// XOR: "!=" Queremos fazer algo, uma das duas é verdadeiras mas nao ambas:
+if (( a == b || c==d) && (( a ==b) != (c ==d) )) {}
+
+// Operador Ternario: Possui esse nome pois possui 3 sinais de "=". Transforma o "IF ELSE" em uma unica linha de codigo Ex.:
+a==b /* condição*/ ? console.log("Match") /* true*/: console.log ( "No Match"); /* false*/
+
+// Versão longa (mesma coisa):
+If (a==b){
+    console.log("Match");
+ } else {
+      console.log ( "No Match");
+}
+
+// ARRAYS: Para armazenar varios itens de uma vez só. Como se fosse varias variaveis, declaradas de uma vez só. Separados por "," e com colchetes "[]" Sendo que cada um de seus valores pode ser de um tipo de dado diferente. Exemplo:
+
+var canetas;
+canetas = ["vermelha", "azul", "verde", "laranja"];  //ARRAY
+
+var variosElementos = ["chaves", 5, false, 568, "mais uma coisa"];  //ARRAY com dados de tipos diferentes.
+
+// A mesma coisa se fosse em variaveis:
+var caneta0 = "vermelho";
+var caneta1 = "azul";
+var caneta2 = "verde";
+var caneta3 = "laranja";
+
+// Para alterar o dado dentro de um array:
+
+canetas[3] = "roxo";
+
+// OBJETOS POR ARRAYS: Propriedades e metodos.
+
+// Propriedades: São metainformação sobre objeto que podemos recupera-los e usa-los.
+// Metodos: são funções que pertencem a esse objeto.
+
+// Propriedades:
+// Obtenha uma propriedade de um objeto por nome:
+console.log("Array length: ", pens.length);
+
+// Metodos (basicamente funçoes):
+
+// Inverte o array:
+pens.reverse();
+
+// Remove o primeiro valor do array:
+pens.shift();
+
+// Adicione uma lista de valores separados por vírgulas à frente do array:
+pens.unshift("purple", "black");
+
+// Remove o ultimo valor do array:
+pens.pop();
+
+// Adicione uma lista de valores separados por vírgulas ao final do array:
+pens.push("pink", "prussian blue");
+
+// Encontre a posição especificada (pos) e remova n número de itens do array. Arguments: pens.splice(pos,n):
+pens.splice(3, 2) // Começa no segundo item e remove dois itens.
+
+console.log("After: ", pens);
+
+// Crie uma cópia de uma matriz. Normalmente atribuído a uma nova variável:
+var newPens = pens.slice();
+console.log("New pens: ", newPens);
+
+// Retorna o primeiro elemento que corresponde ao parâmetro de pesquisa após a posição de índice especificada. O padrão é a posição de índice 0. 
+//Argumentos: pens.indexOf(search, index):
+var result = pens.indexOf("orange", 1);
+console.log("The search result index is: ", result);
+
+// Retorna os itens em uma matriz como uma string separada por vírgulas. O argumento separador pode ser usado para alterar a vírgula para outra coisa. Argumentos: pens.join(separator):
+var arrayString = pens.join();
+console.log("String from array: ", arrayString);
+// Esse é o mais usado!
+
+// ______________________________________
+
+// Capitulo 4:
+// Funções e Objetos.
+
+// FUNÇÕES:
+
+// Funções: São pequenos programas que existem dentro do script, elas podem ser usadas para segmentar seções do codigo, para torna-lo mais facil de gerenciar, assim como rodas operações repetidamente. Exemplo de estrutura:
+function multiplicarTermos (a,b) {  
+    var resultado = a*b;
+    retorn resultado;
+} // começam com  a palavra function, seguido de nome e 2 (), e {} que englobara o codigo da função.
+
+// Para rodar uma função ja nomeada no lugar do script onde queremos que ela rode. Isso significa que nos podemos definir    uma função no começo do script e depois escolher roda-la no final. Exemplo:
+var chamaFunção = multipilcaTermos (3,4);
+
+// Funções sao usadas para um de dois objetivos:
+
+// Criam um resultado imediatamente. (Como mudar o conteudo de uma pagina Web)
+// Providenciam uma resposta ou saida a ser usada por outras funções chamado de valor retornado.
+
+// 3 Tipos de funções:
+
+// Funções nomeadas: São executadas qdo chamamos pelo nome;
+// Funções anonimas: Geralmente roam uma vez, ou são desencadeadas por um evento especifico.
+// IIFE: Expressões de Funções Imediatamente Invocadas. Rodam no momento em que o navegador as encontra.
+
+// Funções nomeadas Exemplo:
+
+function findBiggestFraction(a, b) {
+    a>b ? console.log("a: ", a) : console.log("b: ", b);
+}
+
+var firstFraction = 3/4;
+var secondFraction = 5/7;
+
+findBiggestFraction(firstFraction, secondFraction);
+
+// Exemplo Função anonima:  (Basicamente é uma função declarada dentro de uma variavel).
+
+var theBiggest = function(a, b) {
+    var result;
+    a>b ? result = ["a: ", a] : result = ["b: ", b];
+    return result;
+};
+
+console.log(theBiggest(7/9, 13/25));
+
+// IIFE: Expressões de Funções Imediatamente Invocadas  Exemplo:
+
+var firstFraction = 7/9;
+var secondFraction = 13/25;
+
+var theBiggest = (function(a,b) {
+    var result;
+    a>b ? result = ["a: ", a] : result = ["b: ", b];
+    return result;
+})(firstFraction, secondFraction);
+
+console.log(theBiggest);
+
+// OBJETOS: São modelos de dados que nos permitem combinar propriedades e metodos para um conjunto de dados especifico de uma maneira estruturada. Exemplo:
+
+var curso = new Object();
+
+var curso = {
+    título: "Javascript: Formação BSásica",
+    instrutora: "Amanda Cavallaro",
+    nível: "1",
+    dataDePublicação: false,
+    numeroDeVisualizações: 0,
+    }
+}
+
+Metodos: Funções que usam ou mudam os dados dentro da propriedade de um objeto. Exmplo:
+var curso = new Object();
+
+var curso = {
+    título: "Javascript: Formação BSásica",
+    instrutora: "Amanda Cavallaro",
+    nível: "1",
+    dataDePublicação: false,
+    numeroDeVisualizações: 0,
+    atualizaNumeroDeVisualizações: function() { // Exemplo de metodo a partir dessa linha
+        return ++curso.numeroDeVisualizações;
+    }
+}
+
+// Construtores de Objetos: São templates que podemos usar para criar objetos que definimos uma vez e depois usar repetidas vezes. Exemplo:
+
+function Curso(título, instrutora, nível, dataDePublicação, numeroDeVisualizações, atualizaNumeroDeVisualizações) {
+    this.título = título,
+    this.instrutora = instrutora,
+    this.nível = nível,
+    this.dataDePublicação = dataDePublicação,
+    this.numeroDeVisualizações = numeroDeVisualizações,
+    this.atualizaNumeroDeVisualizações = function() {
+        return ++curso.numeroDeVisualizações;
+    };
+}
+
+// Criar instancias do objeto:
+
+var cursos = [
+    new Curso("JavaScript: Formação Básica", "Amanda Cavallaro",
+    1, false, 0),
+    new Curso("JavaScript: Formação Básica", "Amanda Cavallaro",
+    1, true, 432432432)
+]
+
+// ______________________________________
+
+// Capitulo 5:
+// Manipulação de elementos no DOM:
+
+// BOM: MODELO DE OBJETO DO NAVEGADOR. - Objeto "Navegador".
+
+// DOM: O MODELO DE OBJETO DE DOCUMENTO. Propriedade de uma janela contendo o documento HTML atual. Podemos Acessa-la usando: window.document ou apenas document (no console). 
+
+// Nós do Dom: Sao ojetos DOM, denominado como "NÓ".
+
+//Query Selector: Para agir dentro do documento DOM. Exemplos:
+
+document.queryselector (".main-nav a"); // Pegue o primeiro elemento que se encaixe no seletor especificado
+
+document.queryselectorAll (".post-content p"); // Pegue todos os elementos que se encaixem nos seletores especificados
+
+// Acesse e mude elementos com Javascript 
+// https//developer.mozilla.org/pt-BR/docs/web/API/Element
+// No console:
+// Para mudar o titulo:
+document.queryselector (".main-title").innerHTML = "Um Hotel em Marte?"
+
+// Para mudar a Tag:
+document.queryselector (".main-title").outerHTML = "<h1> Olá <h1/>"
+
+// InnerHTML faz alterações de forma direta.
+
+//Element.className: Retorna todas as propriedades em uma unica linha. Somente Leitura/Consulta.
+//Element.classList: Retorna todas as classes dentro do DOMTokenList, que é um array, para que vc possa acessa-las individualmente, pelo numero do indice. Somente Leitura/Consulta.
+document.queryselector (".masthead").classList
+document.queryselector (".masthead").classList [1]
+
+// Para alterar elementos que sao somente leitura: Usar metodos que podem interagir diretamente com eles.
+
+// Para consultar elementos de classe: 
+document.queryselector (".masthead").classList = "<h1> Olá <h1/>"
+
+// Add: Adiciona Valores de classes especificados. Se essas classes a existirem no atributo do elemento, elas são ignoradas.
+document.queryselector(".masthead").classList.add( 'nova-classe')
+
+// remove: Remover valores de classe especificos.
+document.queryselector(".masthead").classList.remove( 'clear')
+
+// Item: Retorna o valor da classe por indice na coleção.
+
+// Toggle: (Alternar) 1) Qdo apenas um argumento esta presente: Toggle class value; Ou seja, se a classe existir, em seguida remove-lo e retornar false, se não, então adiciona-lo e retornar true. 2) Qdo um segundo argumento esta presente: Se o segundo argumento é avaliado como true, adicione o valor especificado da classe e, se ele for avaliado como false. remova-o.
+document.queryselector(".nova-classe").classList.toggle( "masthead")
+false
+document.queryselector(".nova-classe").classList.toggle( "masthead")
+true
+
+// Contains: Verifica se o valor da classe existe no atributo de classe do elemento.
+document.queryselector(".nova-classe").classList.contains( "masthead")
+true
+
+// Propriedades Atributos: Attributes: Apenas leitura, porem ela é um par de chaves e valores eferente a informações dos atributos. Por exemplo, o atributo href sempre tem o valor de url.
+
+// 4 Metodos para consultar os valores de um elemento usando a propriedade atributes, que funcionam para todo atributo ou qqr elemento:
+
+hasAttribute (); Metodos que checa se o atributo especifico esta presente e retorna um boleano (Verdadeiro ou falso).
+
+getAttribute (): //retorna o valor do atributo especificado.
+
+setAttribute (); // Possui 2 valores. Muda o valor do atriubuto especificado ou adiciona o valor do atributo se nao ha presente.
+
+removeAttribute ();  //remover um atributo especifico.
+
+//Exemplo:
+
+const CTAELEMENT = document.querySelector(".cta a");
+console.log(CTAELEMENT.attributes);
+
+if ( CTAELEMENT.hasAttribute("target") ) {
+    console.log(CTAELEMENT.getAttribute("target"));
+} else {
+    CTAELEMENT.setAttribute("target","_blank");
+}
+
+console.log( CTAELEMENT.attributes);
+
+// Adicionar novo elemento ao documento. 1) Podem ser feitos com InnerHtML e OuterHTML porem se algo der errado compromete todo HTLM, qqr movimento errado e o HTML nao funciona corretamente.
+
+// Selecione o elemento:
+const Elem = document.queryselector(".main-title");
+
+// Defina o HTML inner:
+Elem.innerHTML = "This is the new title";
+
+// Defina o HTML outer (incluindo tags de elemento etc):
+Elem.outerHTML = '<h1 class= "main-title"> This is the new title</h1>';
+
+// Adicionar novo elemento ao documento. 2) Dividi-lo em seus componentes fundamentais. ou seja, primeiro, crie o elemento, segundo crie o nó de texto que vai dentro do elemento, terceiro add o nó de texto ao elemento, e quarto add o elemento ao documento (arvore DOM). Dessa forma o JS é mais limpo, versatil e evita acidentes. Exemplo: Sera necessario 3 passos:
+
+.createElement(); // Crie um elemento.
+.createTextNode(); // Crie um nó de texto.
+.appendChild(); // Coloque um nodo filho dentro de outro.
+
+//Exemplo:
+
+// Declaramos as constantes
+const FEATURED = document.querySelector(".featured-image");
+const THEIMAGE = FEATURED.querySelector("img");
+
+// Acha o atributo alt
+var altText = THEIMAGE.getAttribute("alt");
+
+// Cria o elemento de legenda de figuras
+var captionElement = document.createElement("figcaption");
+
+// Adiciona o valor de alt a legenda
+captionElement.append(altText);
+
+// Adiciona a legenda a imagem
+FEATURED.append(captionElement);
+
+// Atualiza o valor de alt da imagem THEIMAGE para vazio
+THEIMAGE.setAttribute("alt","");
+
+console.log(captionElement);
+
+//APLICAR CSS EM LINHA PARA UM ELEMENTO COM JS 
+
+//Add efeito, realçar ou alterar o estado visivel de um elemento. usando o atributo Style. A vantagem é que apenas modifica a propriedade, nao a linha toda. E sera individual.
+
+document.queryselector('.cta a').style // Nos mostrará as propriedades em linha de estilo deste elemento apenas. 
+
+//Podemos atribuir novas propriedades de estilos de varias maneiras. Exemplos:
+document.queryselector('.cta a').style.collor = "green" // altera a cor diretamente.
+
+// caso a propriedade tenha hifen, usar camelCase. Exemplo:
+document.queryselector('.cta a').style.background-collor = "green" //ERRADO
+document.queryselector('.cta a').style.backgroundCollor = "green" // CORRETO - camelCase
+
+//Add efeito, realçar ou alterar o estado visivel de um elemento. usando o atributo Style. Se quiser add em varias propriedades de stylo, podemos agrupa-las em uma unica linha substintuindo qqr estilo em linha ja aplicados usando a propriedade CSS Text. Exemplo:
+document.queryselector('.cta a').style.cssText = "padding:1em; collor: white; background-collor:red"
+
+// Se estamos trabalhando com CSS em linha, a propriedade Stylo nao é a unica opição para esta alteração anterior. Podemos usar os metodos abaixo para fazer alterações: 
+
+.hasAttribute ("style"); // O elemento tem propriedade style?
+.getAttribute ("style"); // Pega os estilos inline
+.setAttribute ("style"); // Add a propriedade CSS
+.removeAttribute ("style"); // Remove a propriedade CSS
+
+// Exemplo:
+
+document.queryselector('.cta a')..setAttribute ('style', 'padding:1em') // Atributo é o Stylo logo após vem uma virgula e seu valor.
+
+//Quando aplicamos CSS inline a um elemento, todas as propriedades sao combinadas em uma unica string no atributo stylo, separada por ponto e virgula. O valor por atribulo em setAtributte é uma linha entao para add multiplas propriedades usando CSS separe-as usando Ponto e virgula.
+document.queryselector('.cta a')..setAttribute ('style','padding: 1em; color: white; background-color: red') 
+
+// IMPORTANTE: STYLOS EM LINHA SOBRESCREVE QQR COISA QUE TENHA SIDO DEFINIDO NO ARQUIVO CSS. O QUE PODE SER PROBLEMATICO. O IDEAL É CRIAR A REGRA CSS COM ALVO EM SELETORES DE CLASSE E IR ADD E REMOVENDO COMPLEMENTOS.
+
+/* ______________________________________
+
+ Capitulo 6:
+    Projeto: Crie um relogio analogico:
+______________________________________
+
+ Capitulo 7:
+
+    Manipulando Elementos do DOM, Parte 2: Eventos
+
+ O que são eventos do DOM? Tudo que acontece com o navegador: Abrir o navegador, inserir url, clicar em um link, mover o mouse. O navegador reage a estes eventos com respostas pré configuradas. Com JS nós criamos respostas para responder a estes eventos.
+
+ Passos:
+ 1ª - Detectar o evento "clique" ao qual associaremos um evento interativo.
+ 2º - identifique o evento que queremos detectar com o clique e ligue-o ao nó do DOM.
+ 3º - Crie uma função que é desencadeada quando o evento acontece.
+
+ Eventos comuns em nivel de navegador: Carregar, erro, online e offline, redefinir (redefinir tamanho janela) scroll, etc.
+
+ Eventos comuns em nivel de DOM: Interação de conteudo como: 
+    Foco (qdo um elemento recebe foco - clicado, selecionado com tab, etc), envio, etc.
+    Desfoque - quando um elemento perde foco (saindo de um campo de formulario, etc).
+    Resetar/submeter - Eventos especificos de formularios.
+    Eventos de Mouse - clique, passar sobre, arrastar, soltar, etc.
+
+ Outros Eventos
+
+    Eventos de Midia: relacionar ao playback do video/Audio.
+    Eventos de Progresso - monitorar progresso do navegador.
+    Eventos de Transição do CSS - transição começar/ rodar/ fim.
+
+Criar manipulador de eventos: Exemplo de criar o botao no site de reservas:
+
+1º - Definir 2 constantes: para ancora, e contante para alert;
+2º - Remover "hide" do CTA e add "hide" para alert (isso garante que se o navegador nao tiver suporte a JS, o visitante vera o alerta imediatamente)
+3º - Criar função para alterar esta classe entre hide e show
+4º -Fazer o botao desencadear o script, pegar o elemento (que neste caso é a constante CTA, dps ligamos um evento a ela, (que sera um evento de clique) e add a palavra ON e atribuimos a variavel*/
+
+const CTA = document.querySelector(".cta a");
+const ALERT = document.querySelector ("#booking-alert");
+
+CTA.classList.remove("hide");
+ALERT.classList.add("hide");
+
+function reveal(){
+    CTA.classList.toggle("hide");
+    ALERT.classList.toggle("hide");
+}
+
+CTA.onclick = reveal;
+
+// Para corrigir o erro que apacereu: A tela subiu ao topo da pagina.
+
+const CTA = document.querySelector(".cta a");
+const ALERT = document.querySelector ("#booking-alert");
+
+CTA.classList.remove("hide");
+ALERT.classList.add("hide");
+
+function reveal(e){
+    e.preventDefaut()
+    CTA.classList.toggle("hide");
+    ALERT.classList.toggle("hide");
+}
+
+CTA.onclick = reveal;
+
+//Listeners de Eventos: 
+
+/* Para conectarmso funções a eventos a nivel de navegadores, ou ligar mais de uma função a um eventos. Ele identifica qdo uma fnção ocorre e depois passa para uma unção especifica. Exemplo: */
+
+const CTA = document.querySelector(".cta a");
+const ALERT = document.querySelector ("#booking-alert");
+
+CTA.classList.remove("hide");
+ALERT.classList.add("hide");
+
+function reveal(e){
+    e.preventDefaut()
+    CTA.classList.toggle("hide");
+    ALERT.classList.toggle("hide");
+}
+
+CTA.addEventListener ('click', reveal, false);
+CTA.addEventListener ('click', function () {console.log ("O botão foi clicado!")}, false); // Função anonima dentro do Listener de eventos para mostrar um texto no Console.log
+
+/* ______________________________________
+
+ Capitulo 8: 
+     Projeto: Teste o quão rápido voce digita
+
+______________________________________
+
+ Capitulo 9: 
+
+     Laços de Repetição (Loops) - FOR - WHILE - DO WHILE
+
+     *** FOR ***
+
+Como fazer loops ou criar laços de repetição: Fazer repetições. Exemplo:
+*/
+// Declaramos uma variavel "i", e atribuimos o seu primeiro valor de inicialização "0", depois do primeiro ";", temos a condição de iteração (repetição), neste caso ate que "i" seja menor que 10 e dps temos o incremento neste caso cada vez i+1, e depois do segundo ";" temos o segundo incremento i++ que significa que a cada vez teremos i+1. Entao a instrução que esta no bloco de codigo ira rodar 10 vezes neste caso.
+
+for (var i = 0; i <10; i++) {  // for=tipo de Loop. 
+    console.log (i); // Esse é o bloco de codigo
+}
+
+//      *** WHILE ***
+
+/* Para que o loop rode ate que uma condição mude: WHILE, que é semelhante ao anterior mas a variavel inicializadora é definada antes do laço de repetição, e a expressão final é incluida dentro do loop, Logo após a execução do codigo. Exemplos:*/
+
+// Neste exemplo, obteremos o mesmo resultado do exemplo anterior:
+var i=0;
+While (i<10){ //While=Tipo do Loop   //  (i<10) = Loop
+    console.log (i);
+    i++; // = Loop
+}
+
+// Outro Exemplo:
+
+var i= 1;
+var reps=0;
+
+while (i<567){
+    // a variavek incrementa de 1 e um novo valor é retornado
+    ++ reps;
+    console.log (reps+ "repetições");
+    i *= 2.1;
+}
+
+//      *** DO WHILE ***
+
+// DO-WHILE: Neste Loop, mesmo quando nao atende a condição, roda o loop pelo menos uma vez o codigo.
+
+var i= 1;
+var reps=0;
+
+ do {
+    ++ reps;
+    console.log (reps+ "repetições");
+    i *= 2.1;
+}while(i<567);
+
+/* PERCORRENDO ARRAYS COM LAÇOS DE REPETIÇÕES:
+
+Qdo usamos o metodo: querySelectorAll, podemos receber um arry de resultado, e para fazer algo como rodar uma função num item dentro deste array um loop vai ajudar a ir a esses itens um de cada vez.
+
+Exemplo: Para verificar que todos os links de um HTML tem seu atributo target com o valor "_Blank" atribuido a ele.*/  
+
+// Primeiro criar array de todos os links, com o prefixo http
+var extLinks = document.querySelectorAll ( "a[ref^=http"); 
+
+// Criar laço de repetição FOR que vai ir da posição 0 ate o comprimento -1 dos links externos e incrementar de um a um, dentro dele tera uma condição: Caso o link externo nao possua o atributo target _blank nós atribuimos o atributo com o valor de _blank para cada condição:
+
+for ( var i=0; i < extLinks.length; i++) {
+    if (!extLinks [i].hasAttribute ("target")){
+        extLinks [i].setAttibute ("target", "_blank");
+    }
+}
+
+/* COMO USAR BREAK E CONTINUE: 
+
+BREAK: Termina o lool atual e pula para a proxima instrução no script.
+CONTINUE: Termina o iteração atual do loop, salta, volta e executa a proxima iteração.
+
+As palavras chaves BREAK e CONTINUE fornecem uma sintaxe para oiperações complexas em loop. e se tornam uteis qdo vc começa a trabalhar com os mais avançados que possuem condições complexas.
+
+Regra: Sempre que que precisar terminar um loop, se algo especifico ocorrer use o BREAK, sempre que precisar evitar uma determinada condição dentro de um loop use o continue.
+
+Exemplo break: Temos um loopue pode ir de 1 ate 36, é um loop while que seria um loop infinito. O break faz com que ele recomece desde o principio da function, a unica coisa que fara com que ele pare é se na instrução se achar um valor de numero 15 finalizando o laço de repetição..
+
+*/
+
+const MIN = 0;
+const MAX = 36;
+var testNumber = 15;
+var i = 1;
+
+while (MAX) {
+    let randomValue = Math.floor(Math.random() * (MAX - MIN)) + MIN;
+
+    if (randomValue == testNumber) {
+        break;
+    }
+
+    console.log("Round número " + i + ": Achei o valor " + randomValue);
+    i++;
+}
+
+console.log("O script rodou " + i + " vezes de achar o " + testNumber + ".");
+
+/* Exemplo CONTINUE: Se o resultado for X continue, para evitar alguma copndição que fara o loop parar. Pula o restante do bloco de código antes de continuar na próxima iteração do loop.
+*/ 
+
+const CEILING = 100;
+
+function primeTest(testValue) {
+    let isPrime = true;
+    for ( let i = 2; i < testValue; i++ ) {
+        if ( testValue % i === 0 ) {
+            isPrime = false;
+        }
+    }
+    return isPrime;
+}
+
+for (let i = 2; i <= CEILING; i++) {
+    let result = primeTest(i);
+
+    if (result == false) {
+        continue;
+    }
+
+    console.log(i + " é um numero primo. ");
+}
+
+/* ______________________________________
